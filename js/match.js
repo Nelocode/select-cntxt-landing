@@ -24,10 +24,11 @@ const PREGUNTAS = [
   },
   {
     num: '03',
-    texto: '¿De cuántos niveles imaginas tu vivienda?',
+    texto: '¿Qué forma tiene tu lote?',
     opciones: [
-      { label: '1 nivel',    key: 'A' },
-      { label: '2 niveles',  key: 'B' },
+      { label: 'Lote plano',      key: 'A' },
+      { label: 'Lote pendiente',   key: 'B' },
+      { label: 'No tengo lote',    key: 'C' },
     ],
   },
 ];
@@ -35,7 +36,7 @@ const PREGUNTAS = [
 const PUNTOS = [
   { A: { brisa:3, marea:3, cumbre:2 },    B: { bassalto:3, meandro:3, origen:2 } },
   { A: { cumbre:2, brisa:2, marea:1 },    B: { origen:2, meandro:2, bassalto:1 }, C: { meandro:2, bassalto:2, origen:1 }, D: { cumbre:1, brisa:1, marea:2, origen:1 } },
-  { A: { bassalto:2, cumbre:2, origen:2, brisa:2, marea:2 },  B: { meandro:3 } },
+  { A: { bassalto:2, brisa:2, origen:2, marea:2 },  B: { meandro:3, cumbre:2 },  C: { bassalto:1, meandro:1, cumbre:1, brisa:1, origen:1, marea:1 } },
 ];
 
 const TIEBREAK_ORDER = ['brisa', 'origen', 'marea', 'cumbre', 'meandro', 'bassalto'];
@@ -130,18 +131,27 @@ function selectOption(qi, key, btn) {
   btn.classList.add('is-selected');
   respuestas[qi] = key;
 
-  // Crossfade background image for this option
+  // Show background image for this option
   const question = btn.closest('.match__question');
   const bgImg = question.querySelector('.match__q-bg');
   const imgSrc = bgImg.dataset[`bg${key}`];
+  const isSwatch = btn.classList.contains('match__swatch');
+
   if (imgSrc) {
     if (bgImg.src.includes(imgSrc)) return;
-    bgImg.classList.remove('is-visible');
-    setTimeout(() => {
+    if (isSwatch) {
       bgImg.src = imgSrc;
-      bgImg.onload = () => bgImg.classList.add('is-visible');
-      if (bgImg.complete) bgImg.classList.add('is-visible');
-    }, 300);
+      bgImg.classList.add('is-visible');
+    } else {
+      bgImg.classList.remove('is-visible');
+      setTimeout(() => {
+        bgImg.src = imgSrc;
+        bgImg.onload = () => bgImg.classList.add('is-visible');
+        if (bgImg.complete) bgImg.classList.add('is-visible');
+      }, 300);
+    }
+  } else {
+    bgImg.classList.remove('is-visible');
   }
 
   // Enable "Siguiente" button
@@ -159,6 +169,15 @@ function showQuestion(n) {
     seg.classList.toggle('is-done', i < n);
     seg.classList.toggle('is-current', i === n);
   });
+
+  // Preload swatch images when entering P2
+  if (n === 1) {
+    const bg = questionEls[1].querySelector('.match__q-bg');
+    ['A','B','C','D'].forEach(k => {
+      const src = bg.dataset[`bg${k}`];
+      if (src) { const img = new Image(); img.src = src; }
+    });
+  }
 }
 
 function calcularTop3() {
@@ -298,10 +317,27 @@ function openLightbox(images, alt) {
   track.innerHTML = '';
   dots.innerHTML = '';
 
+  const messages = [
+    'Elige tu estilo.\nNosotros diseñamos.',
+    'Precio fijo.\nSin sorpresas.',
+    'Tu casa.\nTu método.',
+  ];
+  const positions = ['top-right', 'bottom-left', 'top-right', 'bottom-left'];
+  const shuffled = [...messages].sort(() => Math.random() - 0.5);
+
   images.forEach((src, i) => {
     const slide = document.createElement('div');
     slide.className = 'match__lightbox-slide';
-    slide.innerHTML = `<img src="${src}" alt="${alt}" />`;
+    let cardHTML = '';
+    if (i < shuffled.length) {
+      const pos = positions[i % positions.length];
+      cardHTML = `<div class="lightbox__msg lightbox__msg--${pos}">${shuffled[i].replace('\n','<br>')}</div>`;
+    }
+    slide.innerHTML = `<img src="${src}" alt="${alt}" />${cardHTML}`;
+    slide.querySelector('img').addEventListener('click', (e) => {
+      e.stopPropagation();
+      e.target.classList.toggle('is-zoomed');
+    });
     track.appendChild(slide);
 
     const dot = document.createElement('span');
