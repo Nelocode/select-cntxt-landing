@@ -1,0 +1,203 @@
+/* personalizacion.css */
+#step-personalizacion {
+  background: var(--color-carbon);
+  overflow: hidden;
+}
+
+/* ── Form questions (same pattern as match quiz) ── */
+.pers__quiz {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.pers__progress {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-6) var(--space-4);
+}
+
+.pers__prog-seg {
+  flex: 1;
+  height: 2px;
+  background: rgba(200, 184, 154, 0.2);
+  transition: background var(--transition-fast);
+}
+
+.pers__prog-seg.is-done,
+.pers__prog-seg.is-current {
+  background: var(--color-oro);
+}
+
+.pers__question {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  padding: var(--space-6);
+  gap: var(--space-8);
+  animation: fadeUp 350ms ease forwards;
+}
+
+.pers__question.is-active { display: flex; }
+
+.pers__q-num {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  color: var(--color-oro);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.pers__q-text {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  line-height: 1.15;
+  color: var(--color-crema);
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.pers__options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding-bottom: var(--space-8);
+}
+
+.pers__opt {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap-min);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  color: var(--color-crema);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  line-height: 1.4;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+}
+
+.pers__opt:active,
+.pers__opt.is-selected {
+  border-color: var(--color-oro);
+  background: rgba(168, 147, 90, 0.08);
+}
+
+/* ── Style switcher ── */
+.pers__switcher {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+}
+
+.pers__switcher.is-active { display: flex; }
+
+/* IMAGE SLOT: assets/renders/estilos/{modelo}-{estilo}.jpg
+   1080x1080px square JPG — crossfade on switch */
+.pers__switcher-img-wrap {
+  position: relative;
+  flex: 1;
+  background: var(--color-negro);
+  overflow: hidden;
+}
+
+.pers__switcher-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+
+.pers__switcher-img.is-active { opacity: 1; }
+
+.pers__switcher-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 60%,
+    rgba(26, 26, 23, 0.7) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.pers__switcher-label {
+  position: absolute;
+  top: var(--space-6);
+  left: var(--space-6);
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.12em;
+  color: var(--color-oro);
+  text-transform: uppercase;
+}
+
+/* Style toggle buttons */
+.pers__style-tabs {
+  display: flex;
+  gap: 0;
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-carbon);
+}
+
+.pers__style-tabs {
+  flex-wrap: wrap;
+}
+
+.pers__style-tab {
+  flex: 1 1 calc(50% - 1px);
+  min-height: var(--tap-min);
+  padding: var(--space-3) var(--space-2);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  color: var(--color-arena);
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+
+.pers__style-tab.is-active {
+  background: rgba(168, 147, 90, 0.15);
+  border-color: var(--color-oro);
+  color: var(--color-oro);
+  position: relative;
+  z-index: 1;
+}
+
+.pers__switcher-footer {
+  padding: var(--space-4) var(--space-6);
+  padding-bottom: calc(var(--space-6) + 28px);
+  background: var(--color-carbon);
+}
+
+@media (min-width: 768px) {
+  .pers__q-text { font-size: var(--text-4xl); }
+  .pers__switcher-img-wrap { max-height: 520px; }
+}

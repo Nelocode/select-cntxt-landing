@@ -1,0 +1,143 @@
+/* ============================================
+   TRANSITIONS.CSS — Step navigation transitions
+   ============================================ */
+
+/* --- Step container --- */
+#steps-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100dvh;
+  will-change: transform;
+  transition: transform var(--transition-step);
+}
+
+/* Each step fills the viewport */
+.step {
+  flex: 0 0 100vw;
+  width: 100vw;
+  height: 100dvh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* --- Enter / exit states --- */
+/* Active step is fully visible — driven by translateX on wrapper */
+
+/* Entering from right */
+.step.is-entering {
+  animation: stepEnter var(--transition-step) ease forwards;
+}
+
+/* Leaving to left */
+.step.is-leaving {
+  animation: stepLeave var(--transition-step) ease forwards;
+}
+
+@keyframes stepEnter {
+  from { opacity: 0.6; }
+  to   { opacity: 1; }
+}
+
+@keyframes stepLeave {
+  from { opacity: 1; }
+  to   { opacity: 0.6; }
+}
+
+/* --- Progress bar --- */
+#progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--progress-h);
+  background: var(--color-oro);
+  transition: width var(--transition-step);
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* --- Progress dots (mobile) --- */
+#progress-dots {
+  position: fixed;
+  bottom: var(--space-6);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--space-2);
+  z-index: 100;
+  pointer-events: none;
+}
+
+.progress-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-arena);
+  opacity: 0.3;
+  transition: opacity var(--transition-fast), background var(--transition-fast);
+}
+
+.progress-dot.is-active {
+  background: var(--color-oro);
+  opacity: 1;
+}
+
+.progress-dot.is-done {
+  background: var(--color-arena);
+  opacity: 0.6;
+}
+
+/* --- Navigation buttons --- */
+.btn-continuar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: var(--space-4) var(--space-8);
+  background: var(--color-oro);
+  color: var(--color-negro);
+  border-radius: var(--glass-radius);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  width: 100%;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-continuar:active {
+  background: var(--color-arena);
+}
+
+.btn-volver {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-min);
+  padding: var(--space-3) var(--space-6);
+  background: transparent;
+  color: var(--color-arena);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  -webkit-tap-highlight-color: transparent;
+  transition: color var(--transition-fast);
+}
+
+.btn-volver:active {
+  color: var(--color-crema);
+}
+
+/* Desktop button tweaks */
+@media (min-width: 768px) {
+  .btn-continuar {
+    width: auto;
+    min-width: 220px;
+  }
+}

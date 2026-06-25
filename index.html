@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0D0D0B" />
+  <title>Select CNTXT — Diseños de Arquitectura</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/transitions.css" />
+  <link rel="stylesheet" href="styles/sections/hero.css" />
+  <link rel="stylesheet" href="styles/sections/dolor.css" />
+  <link rel="stylesheet" href="styles/sections/beneficios.css" />
+  <link rel="stylesheet" href="styles/sections/match.css" />
+  <link rel="stylesheet" href="styles/sections/personalizacion.css" />
+  <link rel="stylesheet" href="styles/sections/proceso.css" />
+  <link rel="stylesheet" href="styles/sections/social.css" />
+  <link rel="stylesheet" href="styles/sections/cta.css" />
+</head>
+<body>
+
+  <div id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <nav id="progress-dots" aria-label="Progreso de pasos"></nav>
+
+  <div id="steps-wrapper" aria-live="polite">
+
+    <!-- ══════════════════════════════════════
+         01 · HERO
+         IMAGE: assets/renders/hero-bg.jpg
+         Mobile 1080x1920px, Desktop 1920x1080px
+    ══════════════════════════════════════ -->
+    <section id="step-hero" class="step" data-step="0" aria-label="Paso 1: Inicio">
+      <div class="hero__gallery" aria-hidden="true">
+        <div class="hero__col hero__col--1">
+          <img src="assets/renders/match/bassalto_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/cumbre_int_tropical.jpg" alt="" />
+          <img src="assets/renders/match/brisa_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/origen_int_rustico.jpg" alt="" />
+          <img src="assets/renders/match/marea_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/meandro_int_industrial.jpg" alt="" />
+          <!-- duplicate for seamless loop -->
+          <img src="assets/renders/match/bassalto_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/cumbre_int_tropical.jpg" alt="" />
+          <img src="assets/renders/match/brisa_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/origen_int_rustico.jpg" alt="" />
+          <img src="assets/renders/match/marea_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/meandro_int_industrial.jpg" alt="" />
+        </div>
+        <div class="hero__col hero__col--2">
+          <img src="assets/renders/estilos/brisa_int_minimalista.jpg" alt="" />
+          <img src="assets/renders/match/cumbre_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/bassalto_int_tropical.jpg" alt="" />
+          <img src="assets/renders/match/origen_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/marea_int_rustico.jpg" alt="" />
+          <img src="assets/renders/match/meandro_ext_base.jpg" alt="" />
+          <!-- duplicate for seamless loop -->
+          <img src="assets/renders/estilos/brisa_int_minimalista.jpg" alt="" />
+          <img src="assets/renders/match/cumbre_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/bassalto_int_tropical.jpg" alt="" />
+          <img src="assets/renders/match/origen_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/marea_int_rustico.jpg" alt="" />
+          <img src="assets/renders/match/meandro_ext_base.jpg" alt="" />
+        </div>
+        <div class="hero__col hero__col--3">
+          <img src="assets/renders/match/marea_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/cumbre_int_industrial.jpg" alt="" />
+          <img src="assets/renders/match/bassalto_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/brisa_int_rustico.jpg" alt="" />
+          <img src="assets/renders/match/origen_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/meandro_int_tropical.jpg" alt="" />
+          <!-- duplicate for seamless loop -->
+          <img src="assets/renders/match/marea_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/cumbre_int_industrial.jpg" alt="" />
+          <img src="assets/renders/match/bassalto_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/brisa_int_rustico.jpg" alt="" />
+          <img src="assets/renders/match/origen_ext_base.jpg" alt="" />
+          <img src="assets/renders/estilos/meandro_int_tropical.jpg" alt="" />
+        </div>
+      </div>
+      <div class="hero__overlay"></div>
+
+      <div class="step__content">
+        <p class="hero__eyebrow">Select CNTXT</p>
+        <h1 class="hero__headline">El buen diseño no debería ser un lujo</h1>
+        <p class="hero__sub">Hemos creado un lugar especializado para elegir el diseño de tu vivienda, personalizarla y tener todo para construirla.</p>
+      </div>
+
+      <footer class="step__footer">
+        <button class="hero__btn-primary" data-action="next">Encuentra tu diseño</button>
+      </footer>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         02 · PRECIOS
+    ══════════════════════════════════════ -->
+    <section id="step-cta" class="step" data-step="1" aria-label="Paso 2: Diseños">
+      <img class="cta__bg" src="assets/renders/porque-bg.png" alt="" aria-hidden="true" />
+      <div class="cta__scroll">
+        <div class="cta__header">
+          <p class="cta__eyebrow">Select CNTXT</p>
+          <h2 class="cta__headline">Elige cómo quieres diseñar tu vivienda</h2>
+        </div>
+
+        <div class="cta__planes">
+          <div class="cta__plan" data-plan="esencial">
+            <div class="cta__plan-header">
+              <h3 class="cta__plan-nombre">Diseño Esencial</h3>
+              <p class="cta__plan-precio">$5.000.000 <span class="cta__plan-moneda">COP</span></p>
+            </div>
+            <p class="cta__plan-desc">Elige una vivienda diseñada por un Equipo de Diseño especializado.</p>
+          </div>
+
+          <div class="cta__plan" data-plan="avanzado">
+            <div class="cta__plan-header">
+              <h3 class="cta__plan-nombre">Diseño Avanzado</h3>
+              <p class="cta__plan-precio">$7.000.000 <span class="cta__plan-moneda">COP</span></p>
+            </div>
+            <p class="cta__plan-desc">Elige y personaliza a tu estilo.</p>
+          </div>
+
+          <div class="cta__plan" data-plan="premium">
+            <div class="cta__plan-header">
+              <h3 class="cta__plan-nombre">Diseño Premium</h3>
+              <p class="cta__plan-precio">$10.000.000 <span class="cta__plan-moneda">COP</span></p>
+            </div>
+            <p class="cta__plan-desc">Elige, personaliza y modifica los espacios.</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="cta__footer">
+
+        <button class="btn-continuar" data-action="next">Encuentra tu diseño</button>
+      </footer>
+    </section>
+
+    <!-- ══════════════════════════════════════
+         03 · MATCH — Quiz
+         IMAGES NEEDED: assets/renders/match/
+           llano-hero.jpg  — 1080x1920px vertical
+           angulo-hero.jpg — 1080x1920px vertical
+           patio-hero.jpg  — 1080x1920px vertical
+           ladera-hero.jpg — 1080x1920px vertical
+    ══════════════════════════════════════ -->
+    <section id="step-match" class="step" data-step="2" aria-label="Paso 3: Tu match">
+
+      <!-- ─ Quiz questions ─ -->
+      <div class="match__quiz">
+        <div class="match__progress" aria-hidden="true">
+          <div class="match__prog-seg is-current"></div>
+          <div class="match__prog-seg"></div>
+          <div class="match__prog-seg"></div>
+        </div>
+
+        <!-- P1 -->
+        <div class="match__question is-active" data-question="0">
+          <img class="match__q-bg" data-bg-a="assets/renders/quiz/q1-b.jpg" data-bg-b="assets/renders/quiz/q1-a.jpg" src="" alt="" />
+          <div class="match__q-overlay"></div>
+          <div class="match__q-body">
+            <p class="match__q-num">Pregunta 01 de 03</p>
+            <h2 class="match__q-text">¿Tu vivienda es para qué clima?</h2>
+            <div class="match__options">
+              <button class="match__opt" data-q="0" data-key="A">Quiero una vivienda diseñada para clima cálido</button>
+              <button class="match__opt" data-q="0" data-key="B">Quiero una vivienda diseñada para clima frío</button>
+            </div>
+          </div>
+          <div class="match__q-footer">
+            <button class="btn-continuar match__q-next" data-q="0" disabled>Siguiente</button>
+          </div>
+        </div>
+
+        <!-- P2 — Visual style selector -->
+        <div class="match__question" data-question="1">
+          <img class="match__q-bg" data-bg-a="assets/renders/quiz/q2-a.jpg" data-bg-b="assets/renders/quiz/q2-b.jpg" data-bg-c="assets/renders/quiz/q2-c.jpg" data-bg-d="assets/renders/quiz/q2-d.jpg" src="" alt="" />
+          <div class="match__q-overlay"></div>
+          <div class="match__q-body">
+            <p class="match__q-num">Pregunta 02 de 03</p>
+            <h2 class="match__q-text">¿En qué estilo sueñas tu vivienda?</h2>
+            <div class="match__options match__options--swatches">
+              <button class="match__swatch" data-q="1" data-key="A" style="background: #C4A46E;" title="Tropical Cálido"></button>
+              <button class="match__swatch" data-q="1" data-key="B" style="background: #8B6914;" title="Rústico Contemporáneo"></button>
+              <button class="match__swatch" data-q="1" data-key="C" style="background: #5A5A5A;" title="Industrial Natural"></button>
+              <button class="match__swatch" data-q="1" data-key="D" style="background: #D4C9B0;" title="Minimalismo Silvestre"></button>
+            </div>
+          </div>
+          <div class="match__q-footer">
+            <button class="btn-continuar match__q-next" data-q="1" disabled>Siguiente</button>
+          </div>
+        </div>
+
+        <!-- P3 -->
+        <div class="match__question" data-question="2">
+          <img class="match__q-bg" data-bg-a="assets/renders/quiz/q3-a.jpg" data-bg-b="assets/renders/quiz/q3-b.jpg" src="" alt="" />
+          <div class="match__q-overlay"></div>
+          <div class="match__q-body">
+            <p class="match__q-num">Pregunta 03 de 03</p>
+            <h2 class="match__q-text">¿De cuántos niveles imaginas tu vivienda?</h2>
+            <div class="match__options">
+              <button class="match__opt" data-q="2" data-key="A">1 nivel</button>
+              <button class="match__opt" data-q="2" data-key="B">2 niveles</button>
+            </div>
+          </div>
+          <div class="match__q-footer">
+            <button class="btn-continuar match__q-next" data-q="2" disabled>Siguiente</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─ Loading transition (1.5s pause) ─ -->
+      <div class="match__loading">
+        <p class="match__loading-text">Tu casa es…</p>
+      </div>
+
+      <!-- ─ Results: fullscreen carousel + lightbox gallery ─ -->
+      <div class="match__reveal">
+        <div class="match__carousel" id="match-carousel">
+          <!-- Slides injected by match.js -->
+        </div>
+
+        <button class="match__nav-float match__nav-float--prev is-hidden" id="match-prev" aria-label="Anterior">‹</button>
+        <button class="match__nav-float match__nav-float--next" id="match-next" aria-label="Siguiente">›</button>
+
+        <div class="match__reveal-bottom">
+          <div class="match__reveal-dots" id="match-reveal-dots"></div>
+          <a class="btn-continuar match__reveal-wa" href="https://wa.me/573104745936?text=Hola%20CNTXT%2C%20quiero%20hablar%20con%20un%20especialista%20SELECT" target="_blank" rel="noopener">
+            Habla con el especialista SELECT
+          </a>
+        </div>
+      </div>
+
+
+    </section>
+
+    <!-- ══════════════════════════════════════
+         05 · PERSONALIZACIÓN
+         IMAGES NEEDED: assets/renders/estilos/
+           {modelo}-crudo.jpg     — 1080x1080px square
+           {modelo}-templado.jpg  — 1080x1080px square
+           {modelo}-oscuro.jpg    — 1080x1080px square
+           (modelo = llano | angulo | patio | ladera)
+    ══════════════════════════════════════ -->
+    <section id="step-personalizacion" class="step" data-step="3" aria-label="Paso 4: Personalización">
+
+      <!-- ─ Part A: Conversational form ─ -->
+      <div class="pers__quiz">
+        <div class="pers__progress" aria-hidden="true">
+          <div class="pers__prog-seg is-current"></div>
+          <div class="pers__prog-seg"></div>
+          <div class="pers__prog-seg"></div>
+          <div class="pers__prog-seg"></div>
+        </div>
+
+        <!-- Q1 -->
+        <div class="pers__question is-active" data-question="0">
+          <p class="pers__q-num">01 de 04</p>
+          <h2 class="pers__q-text">¿Cuántas habitaciones necesitas?</h2>
+          <div class="pers__options">
+            <button class="pers__opt" data-q="0" data-campo="habitaciones" data-valor="2">2</button>
+            <button class="pers__opt" data-q="0" data-campo="habitaciones" data-valor="3">3</button>
+            <button class="pers__opt" data-q="0" data-campo="habitaciones" data-valor="4">4</button>
+            <button class="pers__opt" data-q="0" data-campo="habitaciones" data-valor="5+">5 o más</button>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="pers__question" data-question="1">
+          <p class="pers__q-num">02 de 04</p>
+          <h2 class="pers__q-text">¿Trabajas desde casa?</h2>
+          <div class="pers__options">
+            <button class="pers__opt" data-q="1" data-campo="trabajo" data-valor="oficina">Sí, necesito una oficina</button>
+            <button class="pers__opt" data-q="1" data-campo="trabajo" data-valor="rincon">A veces, con un rincón basta</button>
+            <button class="pers__opt" data-q="1" data-campo="trabajo" data-valor="no">No</button>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="pers__question" data-question="2">
+          <p class="pers__q-num">03 de 04</p>
+          <h2 class="pers__q-text">¿Tienes hijos o los planeas?</h2>
+          <div class="pers__options">
+            <button class="pers__opt" data-q="2" data-campo="hijos" data-valor="si">Sí, son parte del diseño</button>
+            <button class="pers__opt" data-q="2" data-campo="hijos" data-valor="no">No por ahora</button>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="pers__question" data-question="3">
+          <p class="pers__q-num">04 de 04</p>
+          <h2 class="pers__q-text">¿Hay algún hobby que necesite espacio?</h2>
+          <div class="pers__options">
+            <button class="pers__opt" data-q="3" data-campo="hobby" data-valor="musica">Música</button>
+            <button class="pers__opt" data-q="3" data-campo="hobby" data-valor="deporte">Deporte en casa</button>
+            <button class="pers__opt" data-q="3" data-campo="hobby" data-valor="taller">Taller o estudio</button>
+            <button class="pers__opt" data-q="3" data-campo="hobby" data-valor="ninguno">Ninguno</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─ Part B: Style switcher ─ -->
+      <div class="pers__switcher">
+        <div class="pers__switcher-img-wrap">
+          <span class="pers__switcher-label">Interior</span>
+          <!-- Images injected dynamically by personalizacion.js -->
+          <div class="pers__switcher-overlay"></div>
+        </div>
+
+        <div class="pers__style-tabs" role="group" aria-label="Selecciona un estilo">
+          <!-- Tabs injected dynamically by personalizacion.js -->
+        </div>
+
+        <div class="pers__switcher-footer">
+          <button class="btn-continuar" data-action="next">Conoce tu Select</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══════════════════════════════════════
+         06 · PROCESO — placeholder
+    ══════════════════════════════════════ -->
+    <section id="step-resumen" class="step" data-step="4" aria-label="Paso 5: Tu Select">
+
+
+      <div class="resumen__scroll">
+        <!-- Header -->
+        <div class="resumen__header">
+          <p class="resumen__eyebrow">Tu Select</p>
+          <h2 class="resumen__titulo">Así es tu casa</h2>
+        </div>
+
+        <!-- House card -->
+        <div class="resumen__casa">
+          <div class="resumen__casa-img-wrap">
+            <img class="resumen__casa-img" id="resumen-casa-img" src="" alt="" />
+            <div class="resumen__casa-overlay"></div>
+            <div class="resumen__casa-badge" id="resumen-casa-badge"></div>
+          </div>
+          <div class="resumen__casa-info">
+            <h3 class="resumen__casa-nombre" id="resumen-casa-nombre"></h3>
+            <p class="resumen__casa-meta" id="resumen-casa-meta"></p>
+            <p class="resumen__casa-desc" id="resumen-casa-desc"></p>
+            <ul class="resumen__specs" id="resumen-specs">
+              <!-- Specs injected by JS -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Interior style -->
+        <div class="resumen__estilo">
+          <p class="resumen__section-label">Estilo interior</p>
+          <div class="resumen__estilo-img-wrap">
+            <img class="resumen__estilo-img" id="resumen-estilo-img" src="" alt="" />
+          </div>
+          <p class="resumen__estilo-nombre" id="resumen-estilo-nombre"></p>
+        </div>
+
+        <!-- Personalization details -->
+        <div class="resumen__detalles">
+          <p class="resumen__section-label">Tu perfil</p>
+          <ul class="resumen__lista" id="resumen-lista">
+            <!-- Items injected by JS -->
+          </ul>
+        </div>
+      </div>
+
+      <footer class="resumen__footer">
+
+        <a class="cta__whatsapp" id="cta-whatsapp" href="https://wa.me/573104745936?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20mi%20casa%20Select" target="_blank" rel="noopener">
+          Escríbenos por WhatsApp
+        </a>
+
+      </footer>
+    </section>
+
+  </div><!-- /steps-wrapper -->
+
+  <!-- WhatsApp floating bubble — global -->
+  <a class="wa-bubble" id="wa-bubble" href="https://wa.me/573104745936?text=Hola%20CNTXT%2C%20quiero%20hablar%20con%20un%20especialista%20SELECT" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Lightbox gallery — outside wrapper to avoid transform context -->
+  <div class="match__lightbox" id="match-lightbox">
+    <button class="match__lightbox-close" id="lightbox-close">✕</button>
+    <button class="match__lightbox-arrow match__lightbox-prev" id="lightbox-prev" aria-label="Anterior">‹</button>
+    <button class="match__lightbox-arrow match__lightbox-next" id="lightbox-next" aria-label="Siguiente">›</button>
+    <div class="match__lightbox-track" id="lightbox-track"></div>
+    <div class="match__lightbox-dots" id="lightbox-dots"></div>
+  </div>
+
+  <script src="js/navigation.js"></script>
+  <script src="js/match.js"></script>
+  <script src="js/personalizacion.js"></script>
+</body>
+</html>

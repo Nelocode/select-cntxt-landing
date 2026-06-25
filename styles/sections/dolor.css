@@ -1,0 +1,141 @@
+/* dolor.css — now "¿Por qué Select?" combined section */
+#step-porque {
+  background: var(--color-negro);
+  position: relative;
+  overflow: hidden;
+}
+
+.porque__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: 0;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+@media (min-width: 480px) {
+  .porque__bg { object-position: center 35%; }
+}
+
+@media (min-width: 768px) {
+  .porque__bg { object-position: center 40%; }
+}
+
+@media (min-width: 1280px) {
+  .porque__bg { object-position: center center; }
+}
+
+.porque__scroll {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+  z-index: 1;
+}
+
+.porque__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.porque__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-oro);
+  text-transform: uppercase;
+}
+
+.porque__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--color-crema);
+}
+
+.porque__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.porque__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--glass-radius);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.porque__item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.porque__item:last-child {
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.porque__dolor {
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--color-arena);
+  opacity: 0.5;
+  text-decoration: line-through;
+  text-decoration-color: rgba(200, 184, 154, 0.3);
+}
+
+.porque__solucion {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-crema);
+}
+
+.porque__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-6);
+  padding-bottom: calc(var(--space-6) + 28px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 400ms ease;
+  position: relative;
+  z-index: 1;
+}
+
+.porque__footer.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+  .porque__headline { font-size: var(--text-5xl); }
+  .porque__scroll { padding: var(--space-8) var(--space-12); }
+  .porque__lista { gap: var(--space-8); }
+  .porque__dolor { font-size: var(--text-base); }
+  .porque__solucion { font-size: var(--text-lg); }
+}

@@ -1,0 +1,72 @@
+/* beneficios.css */
+#step-beneficios {
+  background: var(--color-carbon);
+}
+
+#step-beneficios .step__content {
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--space-8);
+  text-align: left;
+}
+
+.beneficios__eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.14em;
+  color: var(--color-oro);
+  text-transform: uppercase;
+}
+
+.beneficios__headline {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--color-crema);
+}
+
+.beneficios__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+}
+
+.beneficio__item {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.beneficio__check {
+  font-size: var(--text-sm);
+  color: var(--color-oro);
+  flex-shrink: 0;
+  padding-top: 2px;
+  width: 20px;
+  line-height: 1.5;
+}
+
+.beneficio__text {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--color-crema);
+}
+
+.beneficio__text strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-crema);
+  margin-bottom: var(--space-1);
+}
+
+@media (min-width: 768px) {
+  .beneficios__headline { font-size: var(--text-4xl); }
+  .beneficio__text { font-size: var(--text-lg); }
+}
